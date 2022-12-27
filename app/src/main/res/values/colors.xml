@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="Middle_Blue_Green">#A6ECE0</color>
+    <color name="Medium_Aquamarine">#7ADFBB</color>
+    <color name="Ming">#25747E</color>
+    <color name="Dark_Red">#8C1C13</color>
+    <color name="Gunmetal">#2A3136</color>
 </resources>

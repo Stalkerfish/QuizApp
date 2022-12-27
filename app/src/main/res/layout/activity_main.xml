@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral_variant20"
+    android:background="@drawable/the_puddle_10"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="10dp"
@@ -17,8 +17,8 @@
         android:layout_marginBottom="30dp"
         android:text="@string/intro"
         android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"/>
+        android:textSize="42sp"
+        android:fontFamily="@font/pocus_primera"/>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -59,10 +59,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/person_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textCapWords"
-                    android:textColorHint="@color/design_default_color_primary"
+                    android:textColorHint="@color/Ming"
                     android:hint="Name">
 
                 </androidx.appcompat.widget.AppCompatEditText>
@@ -70,13 +71,15 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/startBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/start"
-                android:fontFamily="sans-serif">
+                android:fontFamily="sans-serif"
+                android:backgroundTint="@color/Ming">
 
 
             </Button>
