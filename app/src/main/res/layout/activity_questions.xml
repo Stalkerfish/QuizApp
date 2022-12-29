@@ -16,6 +16,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/question_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -29,6 +30,7 @@
         </TextView>
 
         <ImageView
+            android:id="@+id/flag"
             android:layout_width="wrap_content"
             android:layout_height="215dp"
             android:layout_marginTop="16dp"
@@ -45,6 +47,7 @@
             android:gravity="center_vertical">
 
             <ProgressBar
+                android:id="@+id/progress_bar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 style="?android:attr/progressBarStyleHorizontal"
@@ -56,6 +59,7 @@
             </ProgressBar>
 
             <TextView
+                android:id="@+id/progress_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -74,6 +78,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/answer_1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -88,6 +93,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/answer_2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -102,6 +108,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/answer_3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -116,6 +123,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/answer_4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -132,6 +140,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_12"
