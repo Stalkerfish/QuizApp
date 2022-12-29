@@ -24,7 +24,7 @@
             android:textSize="@dimen/dimen_32"
             android:textStyle="bold"
             android:fontFamily="@font/film_movies"
-            android:textColor="@color/Middle_Blue_Green">
+            android:textColor="@color/white">
 
         </TextView>
 
@@ -62,7 +62,7 @@
                 android:padding="15dp"
                 tools:text="0/9"
                 android:textSize="18sp"
-                android:textColor="@color/Middle_Blue_Green">
+                android:textColor="@color/white">
 
             </TextView>
 
@@ -78,9 +78,11 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_margin="@dimen/dimen_16"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
+                android:background="@drawable/border_bg"
                 tools:text="Answer 1"
-                android:textColor="@color/Middle_Blue_Green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/dimen_48">
 
             </TextView>
@@ -90,9 +92,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_margin="@dimen/dimen_16"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
                 tools:text="Answer 2"
-                android:textColor="@color/Middle_Blue_Green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/dimen_48">
 
             </TextView>
@@ -102,9 +105,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_margin="@dimen/dimen_16"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
                 tools:text="Answer 3"
-                android:textColor="@color/Middle_Blue_Green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/dimen_48">
 
             </TextView>
@@ -114,9 +118,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_margin="@dimen/dimen_16"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
                 tools:text="Answer 4"
-                android:textColor="@color/Middle_Blue_Green"
+                android:textColor="@color/white"
                 android:textSize="@dimen/dimen_48">
 
             </TextView>
@@ -126,7 +131,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit"
+            android:padding="@dimen/dimen_12"
+            android:text="@string/submit"
             android:textSize="@dimen/dimen_24">
 
         </Button>
