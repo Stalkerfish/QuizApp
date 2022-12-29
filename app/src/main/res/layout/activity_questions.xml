@@ -137,6 +137,7 @@
             android:padding="@dimen/dimen_12"
             android:backgroundTint="@color/Gunmetal"
             android:text="@string/submit"
+            android:textColor="@color/white"
             android:textSize="@dimen/dimen_24">
 
         </Button>
