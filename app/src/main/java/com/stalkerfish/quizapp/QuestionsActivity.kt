@@ -37,6 +37,19 @@ class QuestionsActivity : AppCompatActivity() {
         answer4 = findViewById(R.id.answer_4)
 
         val questionsList = Constants.getQuestions()
-        Log.i("QuestionsList size is", "${questionsList.size}")
+
+        var currentPosition = 1
+        val question: Question = questionsList[currentPosition - 1]
+
+        questionText?.text = question.question
+        questionImage?.setImageResource(question.image)
+
+        progressBar?.progress = currentPosition
+        progressText?.text = "${currentPosition}/${progressBar?.max}"
+        
+        answer1?.text = question.optionOne
+        answer2?.text = question.optionTwo
+        answer3?.text = question.optionThree
+        answer4?.text = question.optionFour
     }
 }
