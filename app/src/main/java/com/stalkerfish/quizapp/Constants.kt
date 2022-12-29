@@ -7,7 +7,7 @@ object Constants {
 
         val que1 = Question(
             1,"What country does this flag belong to?",
-            R.drawable.ic_launcher_background, "Argentina", "Australia","Brazil",
+            R.drawable.brasil, "Argentina", "Australia","Brazil",
             "Belgium", 1
         )
         questionList.add(que1)
