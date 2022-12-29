@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@drawable/the_puddle_10"
     tools:context=".QuestionsActivity">
 
@@ -15,15 +16,29 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Question 1"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            tools:text="Question 1"
             android:textSize="@dimen/dimen_32"
             android:textStyle="bold"
             android:fontFamily="@font/film_movies"
             android:textColor="@color/Middle_Blue_Green">
 
         </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="215dp"
+            android:layout_marginTop="16dp"
+            tools:src="@drawable/brasil"
+            android:contentDescription="Brazil Flag">
+
+        </ImageView>
+
+
+
 
     </LinearLayout>
 
