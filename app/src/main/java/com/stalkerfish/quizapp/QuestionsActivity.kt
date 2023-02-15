@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -88,6 +90,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setQuestion() {
+        defaultOptionsView()
 
         val question: Question = mQuestionsList!![mCurrentPosition - 1]
 
@@ -111,19 +114,68 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-       when(view?.id){
+        when(view?.id){
             R.id.answer_1 -> answer1?.let {
                 selectedOptionsView(it, 1)
             }
-           R.id.answer_2 -> answer2?.let {
+            R.id.answer_2 -> answer2?.let {
                 selectedOptionsView(it, 2)
             }
-           R.id.answer_3 -> answer3?.let {
+            R.id.answer_3 -> answer3?.let {
                 selectedOptionsView(it, 3)
             }
-           R.id.answer_4 -> answer4?.let {
+            R.id.answer_4 -> answer4?.let {
                 selectedOptionsView(it, 4)
             }
-       }
+            R.id.submit -> {
+                if(mSelectedOptionPosition == 0){
+                    mCurrentPosition++
+
+                    when {
+                        mCurrentPosition <= mQuestionsList!!.size ->
+                            setQuestion()
+
+                        else -> {
+                            MotionToast.createToast(this, null,
+                                "Congrats! You made it!",
+                                MotionToastStyle.SUCCESS, MotionToast.GRAVITY_BOTTOM,
+                                MotionToast.LONG_DURATION, Typeface.SANS_SERIF)
+                        }
+                    }
+                }
+                else{
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
+
+                    if (question!!.correctAnswer != mSelectedOptionPosition)
+                        answerView(mSelectedOptionPosition, R.drawable.incorrect_border_bg)
+
+                    answerView(question.correctAnswer, R.drawable.correct_border_bg)
+
+                    if(mCurrentPosition == mQuestionsList!!.size)
+                        submitBtn?.text = "FINISH"
+
+                    else
+                        submitBtn?.text = "GO TO NEXT QUESTION"
+
+                    mSelectedOptionPosition = 0
+                }
+            }
+        }
+    }
+
+    private fun answerView(answer: Int, drawable: Int){
+        when(answer){
+            1 -> answer1?.background = ContextCompat.getDrawable(
+                this, drawable)
+
+            2 -> answer2?.background = ContextCompat.getDrawable(
+                this, drawable)
+
+            3 -> answer3?.background = ContextCompat.getDrawable(
+                this, drawable)
+
+            4 -> answer4?.background = ContextCompat.getDrawable(
+                this, drawable)
+        }
     }
 }
