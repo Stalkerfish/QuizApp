@@ -1,9 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/the_puddle_10"
     tools:context=".QuestionsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/question_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            tools:text="Question 1"
+            android:textSize="@dimen/dimen_32"
+            android:textStyle="bold"
+            android:fontFamily="@font/film_movies"
+            android:textColor="@color/white">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/flag"
+            android:layout_width="wrap_content"
+            android:layout_height="215dp"
+            android:layout_marginTop="16dp"
+            tools:src="@drawable/brasil"
+            android:contentDescription="Brazil Flag">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_weight="1"
+                android:max="9"
+                android:minHeight="50dp"
+                android:progress="0"
+                android:indeterminate="false">
+            </ProgressBar>
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                tools:text="0/9"
+                android:textSize="18sp"
+                android:textColor="@color/white">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/answer_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
+                android:background="@drawable/border_bg"
+                tools:text="Answer 1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_48">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/answer_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
+                android:background="@drawable/border_bg"
+                tools:text="Answer 2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_48">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/answer_3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
+                android:background="@drawable/border_bg"
+                tools:text="Answer 3"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_48">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/answer_4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="@dimen/dimen_12"
+                android:padding="@dimen/dimen_8"
+                android:background="@drawable/border_bg"
+                tools:text="Answer 4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_48">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_12"
+            android:backgroundTint="@color/Gunmetal"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_24">
+
+        </Button>
+
+    </LinearLayout>
+
+</ScrollView>

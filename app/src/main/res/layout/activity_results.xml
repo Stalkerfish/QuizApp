@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="90dp"
+    android:background="@drawable/the_puddle_10">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/helveticabold"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:text="@string/your_results">
+    </TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_trophy"
+        android:contentDescription="@string/congratulations_you_made_to_the_end">
+    </ImageView>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/pocus_primera"
+        android:textSize="30sp"
+        android:text="CONGRATULATIONS!">
+    </TextView>
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/pocus_primera"
+        android:textSize="30sp"
+        tools:text="Allison!">
+    </TextView>
+
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#7C7B9A"
+        android:fontFamily="@font/helvetica_regular"
+        android:textSize="20sp"
+        tools:text="Your score is 0 out of 9">
+    </TextView>
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:padding="14dp"
+        android:textSize="32sp"
+        android:text="@string/finish">
+    </Button>
+
+</LinearLayout>

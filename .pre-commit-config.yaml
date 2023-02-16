@@ -1,0 +1,25 @@
+repos:
+
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.5.0 
+
+    hooks:
+      - id: pretty-format-kotlin
+        name: KTLint
+        description: Runs KTLint over Kotlin source files
+        entry: pretty-format-kotlin
+        language: python
+        types: [kotlin]
+        minimum_pre_commit_version: '1'
+        # this is needed because the hook downloads ktlint and we don't have yet a
+        # nice way of ensuring a single download over multiple runs
+        require_serial: true
+
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.1.1
+
+    hooks:
+    - id: conventional-pre-commit
+      stages: [commit-msg]
+      args: [] # optional: list of Conventional Commits types to allow e.g. [feat, fix, ci, chore, test]
