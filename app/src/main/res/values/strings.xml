@@ -6,4 +6,7 @@
     <string name="name">Name</string>
     <string name="start">START</string>
     <string name="submit">Submit</string>
+    <string name="your_results">Your Results</string>
+    <string name="congratulations_you_made_to_the_end">CONGRATULATIONS, YOU MADE TO THE END</string>
+    <string name="finish">FINISH</string>
 </resources>

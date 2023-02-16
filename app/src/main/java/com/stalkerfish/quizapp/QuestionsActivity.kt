@@ -1,5 +1,6 @@
 package com.stalkerfish.quizapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
-    private var mSelectedOptionPosition: Int = 1
+    private var mSelectedOptionPosition: Int = 0
 
     private var questionText: TextView? = null
     private var questionImage: ImageView? = null
@@ -45,14 +46,18 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         answer3 = findViewById(R.id.answer_3)
         answer4 = findViewById(R.id.answer_4)
 
+        submitBtn = findViewById(R.id.submit)
+
+        mQuestionsList = Constants.getQuestions()
+
+        setQuestion()
+
         answer1?.setOnClickListener(this)
         answer2?.setOnClickListener(this)
         answer3?.setOnClickListener(this)
         answer4?.setOnClickListener(this)
 
-        mQuestionsList = Constants.getQuestions()
-
-        setQuestion()
+        submitBtn?.setOnClickListener(this)
 
     }
 
@@ -98,7 +103,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         questionImage?.setImageResource(question.image)
 
         progressBar?.progress = mCurrentPosition
-        progressText?.text = "${mCurrentPosition}/${progressBar?.max}"
+        progressText?.text = "$mCurrentPosition" + "/" + progressBar?.max
 
         answer1?.text = question.optionOne
         answer2?.text = question.optionTwo
@@ -132,14 +137,20 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     mCurrentPosition++
 
                     when {
-                        mCurrentPosition <= mQuestionsList!!.size ->
+                        mCurrentPosition <= mQuestionsList!!.size -> {
                             setQuestion()
+                        }
 
                         else -> {
                             MotionToast.createToast(this, null,
                                 "Congrats! You made it!",
                                 MotionToastStyle.SUCCESS, MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION, Typeface.SANS_SERIF)
+
+                            val intent = Intent(this,
+                                ResultsActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                 }
