@@ -34,7 +34,7 @@
         android:textColor="@color/white"
         android:fontFamily="@font/pocus_primera"
         android:textSize="30sp"
-        android:text="CONGRATULATIONS!">
+        android:text="@string/congratulations">
     </TextView>
 
     <TextView
@@ -67,7 +67,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
         android:padding="14dp"
-        android:textSize="32sp"
+        android:backgroundTint="@color/Ming"
+        android:fontFamily="sans-serif"
+        android:textSize="28sp"
+        android:textColor="@color/white"
         android:text="@string/finish">
     </Button>
 
