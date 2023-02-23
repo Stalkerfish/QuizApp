@@ -9,4 +9,8 @@
     <string name="your_results">Your Results</string>
     <string name="congratulations_you_made_to_the_end">CONGRATULATIONS, YOU MADE TO THE END</string>
     <string name="finish">FINISH</string>
+    <string name="result">$mCurrentPosition" + "/" + progressBar?.max</string>
+    <string name="nameShadow">Name</string>
+    <string name="goNext">GO TO NEXT QUESTION</string>
+    <string name="congratulations">CONGRATULATIONS,</string>
 </resources>

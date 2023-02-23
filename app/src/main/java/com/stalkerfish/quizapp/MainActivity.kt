@@ -9,7 +9,6 @@ import androidx.core.content.res.ResourcesCompat
 import www.sanju.motiontoast.MotionToast
 import www.sanju.motiontoast.MotionToastStyle
 
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 val intent = Intent(this, QuestionsActivity::class.java)
+                intent.putExtra(Constants.USER_NAME, personName.text.toString())
                 startActivity(intent)
                 finish()
             }

@@ -16,9 +16,13 @@ import www.sanju.motiontoast.MotionToastStyle
 
 class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
+    private var mUserName: String? = null
+
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
+
+    private var mCorrectAnswers: Int = 0
 
     private var questionText: TextView? = null
     private var questionImage: ImageView? = null
@@ -35,6 +39,8 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
+
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         questionText = findViewById(R.id.question_text)
         questionImage = findViewById(R.id.flag)
@@ -103,7 +109,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         questionImage?.setImageResource(question.image)
 
         progressBar?.progress = mCurrentPosition
-        progressText?.text = "$mCurrentPosition" + "/" + progressBar?.max
+        progressText?.text = getString(R.string.result)
 
         answer1?.text = question.optionOne
         answer2?.text = question.optionTwo
@@ -111,10 +117,10 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         answer4?.text = question.optionFour
 
         if (mCurrentPosition == mQuestionsList!!.size){
-            submitBtn?.text = "FINISH"
+            submitBtn?.text = getString(R.string.finish)
 
         }else{
-            submitBtn?.text = "SUBMIT"
+            submitBtn?.text = getString(R.string.submit)
         }
     }
 
@@ -147,8 +153,12 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                                 MotionToastStyle.SUCCESS, MotionToast.GRAVITY_BOTTOM,
                                 MotionToast.LONG_DURATION, Typeface.SANS_SERIF)
 
-                            val intent = Intent(this,
-                                ResultsActivity::class.java)
+                            val intent = Intent(this, ResultsActivity::class.java)
+
+                            intent.putExtra(Constants.USER_NAME, mUserName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList?.size)
+
                             startActivity(intent)
                             finish()
                         }
@@ -159,14 +169,16 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
                     if (question!!.correctAnswer != mSelectedOptionPosition)
                         answerView(mSelectedOptionPosition, R.drawable.incorrect_border_bg)
+                    else
+                        mCorrectAnswers++
 
                     answerView(question.correctAnswer, R.drawable.correct_border_bg)
 
                     if(mCurrentPosition == mQuestionsList!!.size)
-                        submitBtn?.text = "FINISH"
+                        submitBtn?.text = getString(R.string.finish)
 
                     else
-                        submitBtn?.text = "GO TO NEXT QUESTION"
+                        submitBtn?.text = getString(R.string.goNext)
 
                     mSelectedOptionPosition = 0
                 }

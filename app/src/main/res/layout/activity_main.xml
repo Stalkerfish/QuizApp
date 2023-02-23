@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textCapWords"
                     android:textColorHint="@color/Ming"
-                    android:hint="Name">
+                    android:hint="@string/nameShadow">
 
                 </androidx.appcompat.widget.AppCompatEditText>
 
@@ -80,7 +80,6 @@
                 android:text="@string/start"
                 android:fontFamily="sans-serif"
                 android:backgroundTint="@color/Ming">
-
 
             </Button>
         </LinearLayout>
